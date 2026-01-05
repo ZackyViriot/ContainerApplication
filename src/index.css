@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Design System Variables - Zen Aesthetic */
+:root {
+  --color-primary: 79 70 229; /* indigo-600 */
+  --color-primary-dark: 67 56 202; /* indigo-700 */
+  --color-primary-light: 129 140 248; /* indigo-400 */
+  --radius-default: 0.75rem; /* 12px */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Typography Enhancement - Zen Aesthetic */
+body {
+  @apply antialiased bg-white text-slate-900;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+/* Remove default transitions to allow explicit control */
+* {
+  transition: none;
+}
+
+/* Smooth, Zen-like Transitions for Interactive Elements */
+button, a, [role="button"] {
+  @apply transition-all duration-300 ease-out;
+}
+
+input, textarea, select {
+  @apply transition-all duration-200 ease-out;
+}
+
+/* Refined Focus Styles - Calm and Minimal */
+*:focus-visible {
+  @apply outline-none ring-2 ring-indigo-400 ring-offset-2 ring-offset-white;
+  transition: box-shadow 0.2s ease-out;
+}
+
+/* Minimal, Beautiful Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Selection Styling */
+::selection {
+  @apply bg-indigo-100 text-indigo-900;
+}
+
+/* Smooth Image Loading */
+img {
+  @apply transition-opacity duration-300;
+}
+
+img[loading] {
+  @apply opacity-0;
+}
+
+img.loaded {
+  @apply opacity-100;
+}
