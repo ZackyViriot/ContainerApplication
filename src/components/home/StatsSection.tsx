@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { TrendingUp, Users, Star, Award } from 'lucide-react';
+import { TiltCard } from '../shared/TiltCard';
+import { GlassCard } from '../shared/GlassCard';
 
 const stats = [
   {
@@ -54,54 +56,49 @@ export const StatsSection: React.FC = () => {
                 }}
                 className="group relative"
               >
-                {/* Card */}
-                <motion.div
-                  whileHover={{
-                    y: -4,
-                    transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] }
-                  }}
-                  className="relative bg-white rounded-2xl p-6 lg:p-8 border-2 border-slate-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-300 overflow-hidden"
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                <TiltCard tiltIntensity={12} glareEffect={true}>
+                  <GlassCard variant="strong" className="p-6 lg:p-8">
+                    {/* Gradient overlay on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
 
-                  {/* Icon */}
-                  <motion.div
-                    className={`relative inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} mb-4 shadow-sm`}
-                    whileHover={{
-                      scale: 1.1,
-                      rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.4 }
-                    }}
-                  >
-                    <Icon className="w-6 h-6 text-white" />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                  </motion.div>
+                    {/* Icon */}
+                    <motion.div
+                      className={`relative inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} mb-4 shadow-sm`}
+                      whileHover={{
+                        scale: 1.1,
+                        rotate: [0, -10, 10, 0],
+                        transition: { duration: 0.4 }
+                      }}
+                    >
+                      <Icon className="w-6 h-6 text-white" />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300`}></div>
+                    </motion.div>
 
-                  {/* Value */}
-                  <motion.div
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.1 + 0.3,
-                      ease: [0.16, 1, 0.3, 1]
-                    }}
-                    className="relative text-3xl lg:text-4xl font-bold text-slate-900 mb-1"
-                  >
-                    {stat.value}
-                  </motion.div>
+                    {/* Value */}
+                    <motion.div
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1 + 0.3,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className="relative text-3xl lg:text-4xl font-bold text-slate-900 mb-1"
+                    >
+                      {stat.value}
+                    </motion.div>
 
-                  {/* Label */}
-                  <p className="relative text-sm text-slate-600 font-medium">
-                    {stat.label}
-                  </p>
+                    {/* Label */}
+                    <p className="relative text-sm text-slate-600 font-medium">
+                      {stat.label}
+                    </p>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                  </div>
-                </motion.div>
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                    </div>
+                  </GlassCard>
+                </TiltCard>
               </motion.div>
             );
           })}

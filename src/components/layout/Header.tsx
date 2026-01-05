@@ -62,27 +62,22 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200/50'
-          : 'bg-white border-b border-slate-100'
+          ? 'bg-white border-b border-slate-200'
+          : 'bg-white border-b border-transparent'
       }`}
     >
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      <div className="w-full px-6 md:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-emerald-600 p-2.5 rounded-lg group-hover:bg-emerald-700 transition-all shadow-sm">
-              <Truck className="h-6 w-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-slate-900 tracking-tight">Container Rentals</span>
-              <span className="text-xs text-slate-500 font-medium">Professional Waste Solutions</span>
-            </div>
+          {/* Logo - Far Left */}
+          <Link to="/" className="flex items-center space-x-2.5 group flex-shrink-0">
+            <Truck className="h-6 w-6 text-slate-900" />
+            <span className="text-lg font-semibold text-slate-900">Container Rentals</span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Far Right */}
           <nav className="hidden lg:flex items-center space-x-1">
             {mainNavLinks.map((link) => {
               const hasDropdown = !!link.dropdown;
@@ -97,10 +92,10 @@ export const Header: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
-                      className={`flex items-center space-x-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                      className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors ${
                         isActive
-                          ? 'text-emerald-600 bg-emerald-50'
-                          : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                          ? 'text-slate-900'
+                          : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
                       <span>{link.name}</span>
@@ -109,15 +104,15 @@ export const Header: React.FC = () => {
 
                     {/* Dropdown Menu */}
                     {openDropdown === link.name && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-slate-200/80 py-2 overflow-hidden">
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-1 overflow-hidden">
                         {link.dropdown!.map((item) => (
                           <Link
                             key={item.path}
                             to={item.path}
-                            className={`block px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
+                            className={`block px-4 py-2 text-sm transition-colors ${
                               location.pathname === item.path
-                                ? 'text-emerald-600 bg-emerald-50'
-                                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                                ? 'text-slate-900 bg-slate-50'
+                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                             }`}
                           >
                             {item.name}
@@ -133,24 +128,24 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.path}
                   to={link.path!}
-                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                  className={`px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-emerald-700 bg-emerald-50'
-                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                      ? 'text-slate-900'
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   {link.name}
                 </Link>
               );
             })}
-          </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button to="/quote" variant="primary" size="sm">
-              Get Free Quote
-            </Button>
-          </div>
+            {/* CTA Button - Inside Nav */}
+            <div className="ml-6">
+              <Button to="/quote" variant="primary" size="sm" className="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                Get Quote
+              </Button>
+            </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button

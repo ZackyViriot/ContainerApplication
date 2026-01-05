@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import type { QuoteFormData, QuoteSummary } from '../types/quote.types';
-import { Section } from '../components/shared/Section';
 import { Button } from '../components/shared/Button';
 import { StepIndicator } from '../components/quote/StepIndicator';
 import { PriceBreakdown } from '../components/quote/PriceBreakdown';
@@ -141,11 +140,11 @@ export const QuotePage: React.FC = () => {
   };
 
   return (
-    <Section background="slate" padding="xl">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">Get Your Free Quote</h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
+    <div className="min-h-screen bg-white py-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Get Your Free Quote</h1>
+          <p className="text-lg text-slate-600">
             Complete the form below to receive an instant price estimate
           </p>
         </div>
@@ -153,7 +152,7 @@ export const QuotePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md border border-slate-200 p-8 md:p-10">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 md:p-10">
               <StepIndicator currentStep={currentStep} totalSteps={6} steps={steps} />
 
               <form onSubmit={handleSubmit(onSubmit)}>
@@ -172,11 +171,11 @@ export const QuotePage: React.FC = () => {
                   </Button>
 
                   {currentStep < 6 ? (
-                    <Button type="button" variant="primary" onClick={handleNext}>
+                    <Button type="button" variant="primary" onClick={handleNext} className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg">
                       Next <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   ) : (
-                    <Button type="submit" variant="primary">
+                    <Button type="submit" variant="primary" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg">
                       Get My Quote <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   )}
@@ -191,6 +190,6 @@ export const QuotePage: React.FC = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 };

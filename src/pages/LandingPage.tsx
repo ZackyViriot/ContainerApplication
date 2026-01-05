@@ -1,26 +1,20 @@
 import React from 'react';
-import { Hero } from '../components/home/Hero';
-import { StatsSection } from '../components/home/StatsSection';
-import { AboutSection } from '../components/home/AboutSection';
-import { ServicesGrid } from '../components/home/ServicesGrid';
-import { ProductShowcase } from '../components/home/ProductShowcase';
-import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { Industries } from '../components/home/Industries';
-import { Testimonials } from '../components/home/Testimonials';
-import { FinalCTA } from '../components/home/FinalCTA';
+import { HeroMinimal } from '../components/home/HeroMinimal';
+import { StatsSectionMinimal } from '../components/home/StatsSectionMinimal';
+import { ServicesGridMinimal } from '../components/home/ServicesGridMinimal';
+import { AboutSectionMinimal } from '../components/home/AboutSectionMinimal';
+import { WhyChooseUsMinimal } from '../components/home/WhyChooseUsMinimal';
+import { FinalCTAMinimal } from '../components/home/FinalCTAMinimal';
 
 export const LandingPage: React.FC = () => {
   return (
     <>
-      <Hero />
-      <StatsSection />
-      <AboutSection />
-      <ServicesGrid />
-      <ProductShowcase />
-      <WhyChooseUs />
-      <Industries />
-      <Testimonials />
-      <FinalCTA />
+      <HeroMinimal />
+      <StatsSectionMinimal />
+      <ServicesGridMinimal />
+      <AboutSectionMinimal />
+      <WhyChooseUsMinimal />
+      <FinalCTAMinimal />
     </>
   );
 };
