@@ -61,37 +61,64 @@ export const ServicesGrid: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
         {services.map((service, index) => {
           const Icon = service.icon;
+          const gradients = [
+            'from-blue-500 to-cyan-500',
+            'from-violet-500 to-purple-500',
+            'from-orange-500 to-pink-500'
+          ];
+          const gradient = gradients[index];
+
           return (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6, transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] } }}
-              className="group bg-white rounded-2xl p-8 lg:p-10 border-2 border-slate-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-300"
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] }
+              }}
+              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border-2 border-slate-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:border-slate-300 transition-all duration-300 overflow-hidden"
             >
+              {/* Gradient overlay on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+
+              {/* Animated icon container */}
               <div className="flex justify-center mb-6">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-gradient-to-br from-indigo-500 to-violet-600 p-5 rounded-xl shadow-sm"
+                  className={`relative bg-gradient-to-br ${gradient} p-5 rounded-xl shadow-lg`}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.4 }
+                  }}
                 >
-                  <Icon className="h-8 w-8 text-white" />
+                  <Icon className="h-8 w-8 text-white relative z-10" />
+                  {/* Glow effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-xl blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
                 </motion.div>
               </div>
-              <h3 className="text-xl lg:text-2xl font-semibold text-slate-900 mb-3 text-center">{service.title}</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed text-sm lg:text-base text-center">{service.description}</p>
-              <div className="flex justify-center">
+
+              <h3 className="relative text-xl lg:text-2xl font-semibold text-slate-900 mb-3 text-center">{service.title}</h3>
+              <p className="relative text-slate-600 mb-6 leading-relaxed text-sm lg:text-base text-center">{service.description}</p>
+
+              <div className="relative flex justify-center">
                 <Button to={service.link} variant="ghost" className="group-hover:text-indigo-600 font-medium text-sm">
                   Learn More
                   <motion.div
                     className="inline-block ml-2"
-                    whileHover={{ x: 3 }}
+                    whileHover={{ x: 4 }}
                     transition={{ duration: 0.2 }}
                   >
                     <ArrowRight className="h-4 w-4 inline" />
                   </motion.div>
                 </Button>
+              </div>
+
+              {/* Shine effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </div>
             </motion.div>
           );

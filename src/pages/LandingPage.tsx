@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/home/Hero';
+import { StatsSection } from '../components/home/StatsSection';
 import { AboutSection } from '../components/home/AboutSection';
 import { ServicesGrid } from '../components/home/ServicesGrid';
 import { ProductShowcase } from '../components/home/ProductShowcase';
@@ -12,6 +13,7 @@ export const LandingPage: React.FC = () => {
   return (
     <>
       <Hero />
+      <StatsSection />
       <AboutSection />
       <ServicesGrid />
       <ProductShowcase />
