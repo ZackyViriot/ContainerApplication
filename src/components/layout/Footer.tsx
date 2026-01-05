@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="bg-indigo-600 p-2 rounded-lg">
+              <div className="bg-emerald-600 p-2 rounded-lg">
                 <Truck className="h-6 w-6 text-white" />
               </div>
               <div className="flex flex-col">
@@ -40,17 +40,17 @@ export const Footer: React.FC = () => {
             </Link>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-indigo-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                 <span className="text-sm leading-relaxed">11580 Hwy 87 E, Adkins, TX 78101</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-indigo-400" />
+                <Phone className="h-5 w-5 text-emerald-400" />
                 <a href="tel:8302168260" className="text-sm hover:text-white transition-colors font-medium">
                   (830) 216-8260
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-indigo-400" />
+                <Mail className="h-5 w-5 text-emerald-400" />
                 <a href="mailto:info@containerrentals.com" className="text-sm hover:text-white transition-colors font-medium">
                   info@containerrentals.com
                 </a>
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               {quickLinks.slice(0, 6).map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm hover:text-indigo-400 transition-colors">
+                  <Link to={link.path} className="text-sm hover:text-emerald-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               {quickLinks.slice(6).map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm hover:text-indigo-400 transition-colors">
+                  <Link to={link.path} className="text-sm hover:text-emerald-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -103,22 +103,22 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
-              <a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Facebook">
+              <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Twitter">
+              <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Instagram">
+              <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="LinkedIn">
+              <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-slate-400">
               <p>&copy; {currentYear} Container Rentals. All rights reserved.</p>
-              <Link to="/privacy" className="hover:text-indigo-400 transition-colors">
+              <Link to="/privacy" className="hover:text-emerald-400 transition-colors">
                 Privacy Policy
               </Link>
             </div>

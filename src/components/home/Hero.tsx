@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
       icon: Sparkles,
       title: 'Expert Service',
       description: 'Helping you choose the right container',
-      gradient: 'from-violet-500 to-purple-500'
+      gradient: 'from-teal-500 to-green-500'
     },
   ];
 
@@ -63,20 +63,20 @@ export const Hero: React.FC = () => {
         <motion.div
           className="absolute inset-0 opacity-30"
           style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)',
+            background: 'radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)',
             x: mouseXSpring,
             y: mouseYSpring,
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.08)_0%,transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.08)_0%,transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.08)_0%,transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.08)_0%,transparent_50%)]"></div>
 
         {/* Animated grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
 
         {/* Floating orbs */}
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-violet-400/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"
           animate={{
             x: [0, -100, 0],
             y: [0, -50, 0],
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 15, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 mb-6 lg:mb-8 px-4 lg:px-5 py-2 lg:py-2.5 bg-gradient-to-r from-indigo-50 to-violet-50 rounded-full border border-indigo-200/50 shadow-sm"
+            className="inline-flex items-center gap-2 mb-6 lg:mb-8 px-4 lg:px-5 py-2 lg:py-2.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-full border border-emerald-200/50 shadow-sm"
           >
             <motion.div
               animate={{
@@ -125,9 +125,9 @@ export const Hero: React.FC = () => {
                 ease: "easeInOut"
               }}
             >
-              <Sparkles className="w-4 h-4 text-indigo-600" />
+              <Sparkles className="w-4 h-4 text-emerald-600" />
             </motion.div>
-            <span className="text-xs lg:text-sm font-medium bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
+            <span className="text-xs lg:text-sm font-medium bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent">
               San Antonio & Boerne's Trusted Partner
             </span>
           </motion.div>
@@ -145,18 +145,18 @@ export const Hero: React.FC = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600/20 via-violet-600/20 to-transparent origin-left"
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600/20 via-teal-600/20 to-transparent origin-left"
               />
             </span>
             <br />
-            <span className="relative inline-block bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="relative inline-block bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
               Waste Management
               {/* Glow effect */}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 0.5, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text blur-xl"
+                className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text blur-xl"
               >
                 Waste Management
               </motion.span>
@@ -183,8 +183,8 @@ export const Hero: React.FC = () => {
               whileTap={{ scale: 0.98 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <Button to="/quote" variant="primary" size="lg" className="relative shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+              <Button to="/quote" variant="primary" size="lg" className="relative shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30">
                 Get Free Quote
                 <motion.div
                   className="inline-block ml-2"

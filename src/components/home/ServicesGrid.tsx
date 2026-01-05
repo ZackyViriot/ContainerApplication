@@ -36,9 +36,9 @@ export const ServicesGrid: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-block mb-6 px-5 py-2.5 bg-indigo-50 rounded-full border border-indigo-100"
+          className="inline-block mb-6 px-5 py-2.5 bg-emerald-50 rounded-full border border-emerald-100"
         >
-          <span className="text-sm font-medium text-indigo-700 tracking-wide">Our Services</span>
+          <span className="text-sm font-medium text-emerald-700 tracking-wide">Our Services</span>
         </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export const ServicesGrid: React.FC = () => {
           const Icon = service.icon;
           const gradients = [
             'from-blue-500 to-cyan-500',
-            'from-violet-500 to-purple-500',
+            'from-teal-500 to-green-500',
             'from-orange-500 to-pink-500'
           ];
           const gradient = gradients[index];
@@ -104,7 +104,7 @@ export const ServicesGrid: React.FC = () => {
               <p className="relative text-slate-600 mb-6 leading-relaxed text-sm lg:text-base text-center">{service.description}</p>
 
               <div className="relative flex justify-center">
-                <Button to={service.link} variant="ghost" className="group-hover:text-indigo-600 font-medium text-sm">
+                <Button to={service.link} variant="ghost" className="group-hover:text-emerald-600 font-medium text-sm">
                   Learn More
                   <motion.div
                     className="inline-block ml-2"

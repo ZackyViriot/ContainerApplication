@@ -19,13 +19,13 @@ export const ContainerCard: React.FC<ContainerCardProps> = ({
 }) => {
   return (
     <Card
-      className={`relative ${selected ? 'ring-2 ring-indigo-600' : ''} ${onSelect ? 'cursor-pointer' : ''}`}
+      className={`relative ${selected ? 'ring-2 ring-emerald-600' : ''} ${onSelect ? 'cursor-pointer' : ''}`}
       padding="none"
       hover={!!onSelect}
       onClick={onSelect}
     >
       {container.isPopular && (
-        <div className="absolute top-4 right-4 z-10 bg-indigo-600 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
+        <div className="absolute top-4 right-4 z-10 bg-emerald-600 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
           Most Popular
         </div>
       )}
@@ -39,7 +39,7 @@ export const ContainerCard: React.FC<ContainerCardProps> = ({
       <div className="p-6">
         <h3 className="text-2xl font-bold text-slate-900 mb-3">{container.name}</h3>
         <div className="flex items-baseline gap-2 mb-4">
-          <span className="text-3xl font-extrabold text-indigo-600">
+          <span className="text-3xl font-extrabold text-emerald-600">
             {formatCurrency(container.basePrice)}
           </span>
           <span className="text-sm text-slate-500 font-medium">starting price</span>
@@ -54,7 +54,7 @@ export const ContainerCard: React.FC<ContainerCardProps> = ({
               <ul className="space-y-2">
                 {container.bestFor.slice(0, 3).map((use, index) => (
                   <li key={index} className="text-sm text-slate-600 flex items-start">
-                    <span className="text-indigo-600 mr-2 font-bold">•</span>
+                    <span className="text-emerald-600 mr-2 font-bold">•</span>
                     {use}
                   </li>
                 ))}

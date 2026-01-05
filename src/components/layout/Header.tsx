@@ -73,7 +73,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-indigo-600 p-2.5 rounded-lg group-hover:bg-indigo-700 transition-all shadow-sm">
+            <div className="bg-emerald-600 p-2.5 rounded-lg group-hover:bg-emerald-700 transition-all shadow-sm">
               <Truck className="h-6 w-6 text-white" />
             </div>
             <div className="flex flex-col">
@@ -99,8 +99,8 @@ export const Header: React.FC = () => {
                     <button
                       className={`flex items-center space-x-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                         isActive
-                          ? 'text-indigo-600 bg-indigo-50'
-                          : 'text-slate-700 hover:text-indigo-600 hover:bg-slate-50'
+                          ? 'text-emerald-600 bg-emerald-50'
+                          : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                       }`}
                     >
                       <span>{link.name}</span>
@@ -116,8 +116,8 @@ export const Header: React.FC = () => {
                             to={item.path}
                             className={`block px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                               location.pathname === item.path
-                                ? 'text-indigo-600 bg-indigo-50'
-                                : 'text-slate-700 hover:text-indigo-600 hover:bg-slate-50'
+                                ? 'text-emerald-600 bg-emerald-50'
+                                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                             }`}
                           >
                             {item.name}
@@ -135,8 +135,8 @@ export const Header: React.FC = () => {
                   to={link.path!}
                   className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
                     isActive
-                      ? 'text-indigo-700 bg-indigo-50'
-                      : 'text-slate-700 hover:text-indigo-600 hover:bg-slate-50'
+                      ? 'text-emerald-700 bg-emerald-50'
+                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                   }`}
                 >
                   {link.name}
@@ -177,7 +177,7 @@ export const Header: React.FC = () => {
                         onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
                         className={`w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                           isActive
-                            ? 'text-indigo-700 bg-indigo-50'
+                            ? 'text-emerald-700 bg-emerald-50'
                             : 'text-slate-700 hover:bg-slate-50'
                         }`}
                       >
@@ -193,8 +193,8 @@ export const Header: React.FC = () => {
                               to={item.path}
                               className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                                 location.pathname === item.path
-                                  ? 'text-indigo-700 bg-indigo-50'
-                                  : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+                                  ? 'text-emerald-700 bg-emerald-50'
+                                  : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
                               }`}
                             >
                               {item.name}
@@ -212,7 +212,7 @@ export const Header: React.FC = () => {
                     to={link.path!}
                     className={`px-4 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                       isActive
-                        ? 'text-indigo-700 bg-indigo-50'
+                        ? 'text-emerald-700 bg-emerald-50'
                         : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >

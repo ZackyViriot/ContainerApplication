@@ -58,7 +58,7 @@ export const AboutSection: React.FC = () => {
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-gradient-to-br from-indigo-600 to-violet-600 text-white p-6 lg:p-8 rounded-2xl shadow-[0_4px_12px_rgba(99,102,241,0.15)] border-2 border-indigo-500/20"
+              className="bg-gradient-to-br from-emerald-600 to-teal-600 text-white p-6 lg:p-8 rounded-2xl shadow-[0_4px_12px_rgba(99,102,241,0.15)] border-2 border-emerald-500/20"
             >
               <div className="text-5xl lg:text-6xl font-bold mb-2">15+</div>
               <div className="text-xs lg:text-sm font-medium opacity-90">Years of Experience</div>
@@ -68,7 +68,7 @@ export const AboutSection: React.FC = () => {
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-gradient-to-br from-violet-600 to-purple-600 text-white p-6 lg:p-8 rounded-2xl shadow-[0_4px_12px_rgba(139,92,246,0.15)] border-2 border-violet-500/20"
+              className="bg-gradient-to-br from-teal-600 to-green-600 text-white p-6 lg:p-8 rounded-2xl shadow-[0_4px_12px_rgba(139,92,246,0.15)] border-2 border-teal-500/20"
             >
               <div className="text-5xl lg:text-6xl font-bold mb-2">2</div>
               <div className="text-xs lg:text-sm font-medium opacity-90">Service Locations</div>

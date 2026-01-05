@@ -62,9 +62,9 @@ export const WhyChooseUs: React.FC = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-indigo-50 p-5 rounded-xl border border-indigo-100"
+                  className="bg-emerald-50 p-5 rounded-xl border border-emerald-100"
                 >
-                  <Icon className="h-10 w-10 text-indigo-600" />
+                  <Icon className="h-10 w-10 text-emerald-600" />
                 </motion.div>
               </div>
               <h3 className="text-xl lg:text-2xl font-semibold text-slate-900 mb-3">{feature.title}</h3>

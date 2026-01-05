@@ -33,8 +33,8 @@ export const Industries: React.FC = () => {
               className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md hover:border-slate-300 transition-all text-center"
             >
               <div className="flex justify-center mb-4">
-                <div className="bg-indigo-100 p-3 rounded-lg">
-                  <Icon className="h-8 w-8 text-indigo-600" />
+                <div className="bg-emerald-100 p-3 rounded-lg">
+                  <Icon className="h-8 w-8 text-emerald-600" />
                 </div>
               </div>
               <h3 className="font-bold text-slate-900 text-sm">{industry.name}</h3>

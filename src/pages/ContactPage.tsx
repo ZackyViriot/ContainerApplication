@@ -53,8 +53,8 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-6">
                 <Card padding="md">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-indigo-100 p-3 rounded-lg flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-emerald-100 p-3 rounded-lg flex-shrink-0">
+                      <MapPin className="h-6 w-6 text-emerald-600" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2">Address</h3>
@@ -68,14 +68,14 @@ export const ContactPage: React.FC = () => {
 
                 <Card padding="md">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-indigo-100 p-3 rounded-lg flex-shrink-0">
-                      <Phone className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-emerald-100 p-3 rounded-lg flex-shrink-0">
+                      <Phone className="h-6 w-6 text-emerald-600" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2">Phone</h3>
                       <a
                         href="tel:8302168260"
-                        className="text-indigo-600 hover:text-indigo-700 font-semibold transition-colors"
+                        className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
                       >
                         (830) 216-8260
                       </a>
@@ -85,14 +85,14 @@ export const ContactPage: React.FC = () => {
 
                 <Card padding="md">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-indigo-100 p-3 rounded-lg flex-shrink-0">
-                      <Mail className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-emerald-100 p-3 rounded-lg flex-shrink-0">
+                      <Mail className="h-6 w-6 text-emerald-600" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2">Email</h3>
                       <a
                         href="mailto:info@containerrentals.com"
-                        className="text-indigo-600 hover:text-indigo-700 font-semibold transition-colors"
+                        className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
                       >
                         info@containerrentals.com
                       </a>
@@ -102,8 +102,8 @@ export const ContactPage: React.FC = () => {
 
                 <Card padding="md">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-indigo-100 p-3 rounded-lg flex-shrink-0">
-                      <Clock className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-emerald-100 p-3 rounded-lg flex-shrink-0">
+                      <Clock className="h-6 w-6 text-emerald-600" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2">Business Hours</h3>

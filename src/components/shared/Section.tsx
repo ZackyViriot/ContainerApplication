@@ -18,7 +18,7 @@ export const Section: React.FC<SectionProps> = ({
   const backgroundClasses = {
     white: 'bg-white',
     slate: 'bg-slate-50',
-    gradient: 'bg-gradient-to-br from-indigo-50 via-white to-slate-50',
+    gradient: 'bg-gradient-to-br from-emerald-50 via-white to-slate-50',
   };
 
   const paddingClasses = {

@@ -34,7 +34,7 @@ export const Testimonials: React.FC = () => {
         {testimonials.map((testimonial) => (
           <Card key={testimonial.name} hover padding="lg">
             <div className="mb-6">
-              <Quote className="h-12 w-12 text-indigo-500" />
+              <Quote className="h-12 w-12 text-emerald-500" />
             </div>
             <p className="text-slate-700 mb-8 leading-relaxed text-lg italic">"{testimonial.content}"</p>
             <div className="flex items-center justify-between">
@@ -44,7 +44,7 @@ export const Testimonials: React.FC = () => {
               </div>
               <div className="flex gap-1">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <span key={i} className="text-indigo-500 text-xl">★</span>
+                  <span key={i} className="text-emerald-500 text-xl">★</span>
                 ))}
               </div>
             </div>

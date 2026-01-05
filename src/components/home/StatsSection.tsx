@@ -25,7 +25,7 @@ const stats = [
     icon: Award,
     value: '2',
     label: 'Service Locations',
-    gradient: 'from-violet-500 to-purple-500',
+    gradient: 'from-teal-500 to-green-500',
   },
 ];
 
