@@ -1,6 +1,6 @@
 import React from 'react';
 import type { UseFormRegister, FieldErrors } from 'react-hook-form';
-import { Home, Building2, HardHat, Wrench, Trash2, Droplet } from 'lucide-react';
+import { Home, Building2, HardHat, Wrench, Trash2, Droplet, Check } from 'lucide-react';
 import type { QuoteFormData, ProjectType } from '../../types/quote.types';
 
 interface Step1Props {
@@ -51,8 +51,8 @@ const projectTypes: { value: ProjectType; label: string; icon: React.ComponentTy
 export const Step1ProjectType: React.FC<Step1Props> = ({ register, errors, value }) => {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">Select Your Project Type</h2>
-      <p className="text-gray-600 mb-8">
+      <h2 className="text-2xl font-black text-slate-900 mb-2">Select Your Project Type</h2>
+      <p className="text-slate-600 mb-8">
         Help us understand your project so we can recommend the best container options.
       </p>
 
@@ -64,10 +64,10 @@ export const Step1ProjectType: React.FC<Step1Props> = ({ register, errors, value
           return (
             <label
               key={type.value}
-              className={`relative flex flex-col p-6 rounded-lg border-2 cursor-pointer transition-all hover:shadow-lg ${
+              className={`group relative flex flex-col p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg ${
                 isSelected
-                  ? 'border-blue-600 bg-blue-50 shadow-md'
-                  : 'border-gray-200 hover:border-blue-300'
+                  ? 'border-lime-500 bg-gradient-to-br from-lime-50 to-emerald-50 shadow-lg shadow-lime-500/20'
+                  : 'border-slate-200 hover:border-lime-300 bg-white'
               }`}
             >
               <input
@@ -77,23 +77,21 @@ export const Step1ProjectType: React.FC<Step1Props> = ({ register, errors, value
                 className="sr-only"
               />
               <div className="flex items-start space-x-3 mb-3">
-                <div className={`p-2 rounded-lg ${isSelected ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                <div className={`p-3 rounded-xl transition-all duration-300 ${
+                  isSelected
+                    ? 'bg-gradient-to-br from-lime-500 to-emerald-500 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 group-hover:bg-lime-100 group-hover:text-lime-600'
+                }`}>
                   <Icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{type.label}</h3>
+                  <h3 className="font-black text-slate-900">{type.label}</h3>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">{type.description}</p>
+              <p className="text-sm text-slate-600">{type.description}</p>
               {isSelected && (
-                <div className="absolute top-3 right-3 bg-blue-600 text-white rounded-full p-1">
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <div className="absolute top-3 right-3 bg-gradient-to-br from-lime-500 to-emerald-500 text-white rounded-full p-1.5 shadow-lg">
+                  <Check className="h-4 w-4" />
                 </div>
               )}
             </label>
@@ -102,7 +100,7 @@ export const Step1ProjectType: React.FC<Step1Props> = ({ register, errors, value
       </div>
 
       {errors.projectType && (
-        <p className="mt-2 text-sm text-red-500">{errors.projectType.message}</p>
+        <p className="mt-4 text-sm text-red-500 font-medium">{errors.projectType.message}</p>
       )}
     </div>
   );

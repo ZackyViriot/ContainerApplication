@@ -1,27 +1,62 @@
 import React from 'react';
-import { MapPin, Users, Award, Clock } from 'lucide-react';
+import { motion } from 'motion/react';
+import { MapPin, Users, Award, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '../components/shared/Button';
 
 export const AboutPageMinimal: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-white border-b border-slate-100">
-        <div className="max-w-4xl mx-auto text-center px-6 md:px-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-            About Container Rentals
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+      <section className="relative py-32 lg:py-40 overflow-hidden">
+        {/* Green Tint Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-50/60 via-white to-emerald-50/60"></div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(132, 204, 22, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(132, 204, 22, 0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="relative max-w-4xl mx-auto text-center px-6 md:px-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-6"
+          >
+            About{' '}
+            <span className="bg-gradient-to-r from-lime-600 to-emerald-600 bg-clip-text text-transparent">
+              Container Rentals
+            </span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto"
+          >
             For over 15 years, we've been providing reliable dumpster rental services to residential,
             commercial, and industrial customers throughout the greater San Antonio area.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Our Story</h2>
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(132, 204, 22, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(132, 204, 22, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="relative max-w-4xl mx-auto px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8">Our Story</h2>
           <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
             <p>
               Founded in 2008, Container Rentals started with a simple mission: to provide fast,
@@ -46,58 +81,53 @@ export const AboutPageMinimal: React.FC = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 lg:py-32 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-16 text-center">Our Core Values</h2>
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-white to-lime-50/50"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(132, 204, 22, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(132, 204, 22, 0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="relative max-w-6xl mx-auto px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-16 text-center">Our Core Values</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-900 rounded-lg mb-6">
-                <Clock className="h-8 w-8 text-white" />
+            {[
+              { icon: Clock, title: 'Reliability', description: 'On-time delivery and pickup, every time. We respect your schedule.', gradient: 'from-lime-500 to-emerald-500' },
+              { icon: Users, title: 'Customer Service', description: 'Friendly, knowledgeable staff ready to help you choose the right solution.', gradient: 'from-lime-500 to-emerald-500' },
+              { icon: Award, title: 'Quality', description: 'Well-maintained equipment and professional service for every project.', gradient: 'from-lime-500 to-emerald-500' },
+              { icon: MapPin, title: 'Local Expertise', description: 'Deep knowledge of San Antonio area regulations and best practices.', gradient: 'from-lime-500 to-emerald-500' },
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${item.gradient} rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className="h-10 w-10 text-white" strokeWidth={2} />
+                </div>
+                <h3 className="text-xl font-black text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Reliability</h3>
-              <p className="text-slate-600 leading-relaxed">
-                On-time delivery and pickup, every time. We respect your schedule.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-900 rounded-lg mb-6">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Customer Service</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Friendly, knowledgeable staff ready to help you choose the right solution.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-900 rounded-lg mb-6">
-                <Award className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Quality</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Well-maintained equipment and professional service for every project.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-900 rounded-lg mb-6">
-                <MapPin className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Local Expertise</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Deep knowledge of San Antonio area regulations and best practices.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Why Choose Us</h2>
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(132, 204, 22, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(132, 204, 22, 0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="relative max-w-4xl mx-auto px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center">Why Choose Us</h2>
 
           <div className="space-y-8">
             {[
@@ -122,12 +152,12 @@ export const AboutPageMinimal: React.FC = () => {
                 description: 'Keep the dumpster as long as you need. We offer flexible rental periods and affordable daily rates.'
               }
             ].map((item, index) => (
-              <div key={index} className="flex items-start space-x-4 pb-8 border-b border-slate-100 last:border-0">
-                <div className="flex-shrink-0 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-sm">
+              <div key={index} className="flex items-start space-x-4 pb-8 border-b border-slate-200 last:border-0">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-lime-500 to-emerald-500 text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-lg">
                   ✓
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-black text-slate-900 mb-2">{item.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{item.description}</p>
                 </div>
               </div>
@@ -137,19 +167,40 @@ export const AboutPageMinimal: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-32 bg-slate-900 text-white">
-        <div className="max-w-3xl mx-auto text-center px-6 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to get started?
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-900/30 via-transparent to-emerald-900/30"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(132, 204, 22, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(132, 204, 22, 0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="relative max-w-3xl mx-auto text-center px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+            Ready to{' '}
+            <span className="bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent">
+              get started?
+            </span>
           </h2>
           <p className="text-xl text-slate-300 mb-10">
             Get your free quote today and experience the difference of working with a trusted local partner.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/quote" variant="primary" className="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-lg font-medium">
+            <Button
+              to="/quote"
+              variant="primary"
+              className="group bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-400 hover:to-emerald-400 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-lime-500/30 hover:shadow-2xl transition-all duration-300"
+            >
               Get Free Quote
+              <ArrowRight className="ml-2 w-5 h-5 inline group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button to="/contact" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-medium">
+            <Button
+              to="/contact"
+              variant="outline"
+              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-bold transition-all duration-300"
+            >
               Contact Us
             </Button>
           </div>

@@ -1,149 +1,109 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../shared/Button';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const HeroMinimal: React.FC = () => {
   return (
-    <section className="relative bg-white min-h-[90vh] flex items-center justify-center px-4 py-20">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Badge */}
+    <section className="relative bg-white min-h-screen flex items-center justify-center px-4 py-32 overflow-hidden">
+      {/* Simple Green Tint Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-lime-50/60 via-white/80 to-emerald-50/60"></div>
+
+      {/* Graph Paper / Checkered Grid Pattern */}
+      <div className="absolute inset-0" style={{
+        backgroundImage: `
+          linear-gradient(rgba(132, 204, 22, 0.1) 1.5px, transparent 1.5px),
+          linear-gradient(90deg, rgba(132, 204, 22, 0.1) 1.5px, transparent 1.5px),
+          linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px)
+        `,
+        backgroundSize: '80px 80px, 80px 80px, 20px 20px, 20px 20px',
+        backgroundPosition: '-1px -1px, -1px -1px, -1px -1px, -1px -1px'
+      }}></div>
+
+      <div className="relative max-w-7xl mx-auto text-center">
+        {/* Animated Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 bg-lime-400/10 rounded-full border border-lime-400/20"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full shadow-lg shadow-lime-400/20"
         >
-          <span className="text-xs font-medium text-lime-700 tracking-wide">NEW</span>
-          <span className="text-xs text-slate-600">Same-day delivery available</span>
+          <Sparkles className="w-4 h-4 text-white" />
+          <span className="text-sm font-semibold text-white tracking-wide">SAME-DAY DELIVERY AVAILABLE</span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Massive Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight"
+          transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 leading-[1.05] tracking-tight"
         >
-          Professional waste
+          Waste Management,
           <br />
-          management made simple.
+          <span className="bg-gradient-to-r from-lime-600 to-lime-500 bg-clip-text text-transparent">
+            Simplified
+          </span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="text-xl md:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
         >
-          Every dumpster rental, concrete washout, and pickup
-          <br className="hidden md:block" />
-          in one simple platform.
+          Dumpster rentals, concrete washouts, and pickups—all in one platform.
+          <br />
+          <span className="text-lime-600">No hassle. No hidden fees. No waiting.</span>
         </motion.p>
 
-        {/* CTA Button */}
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center justify-center gap-6 mb-12 text-sm text-slate-600"
+        >
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-lime-600" />
+            <span className="font-medium">Instant Quotes</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-lime-600" />
+            <span className="font-medium">Expert Service</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-lime-600" />
+            <span className="font-medium">Two Locations</span>
+          </div>
+        </motion.div>
+
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button
             to="/quote"
             variant="primary"
             size="lg"
-            className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-sm"
+            className="group bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-xl shadow-lime-500/30 hover:shadow-2xl hover:shadow-lime-500/40 transition-all duration-500"
           >
             Get Free Quote
+            <ArrowRight className="ml-2 w-5 h-5 inline group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
-        </motion.div>
-
-        {/* Quote Form Mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 lg:mt-20"
-        >
-          <div className="relative max-w-4xl mx-auto">
-            {/* Shadow/Base */}
-            <div className="absolute inset-0 bg-slate-900/5 blur-3xl translate-y-8"></div>
-
-            {/* Quote Form Mockup Container with 3D tilt */}
-            <div
-              className="relative bg-white rounded-2xl shadow-2xl border border-slate-200/60 overflow-hidden"
-              style={{
-                transform: 'perspective(1000px) rotateX(5deg) rotateY(-5deg)',
-              }}
-            >
-              {/* Form Header */}
-              <div className="bg-slate-900 px-8 py-6 text-white">
-                <h3 className="text-2xl font-bold mb-1">Get Your Free Quote</h3>
-                <p className="text-slate-300 text-sm">Takes less than 2 minutes</p>
-              </div>
-
-              {/* Form Content */}
-              <div className="bg-gradient-to-br from-white to-slate-50 p-8 md:p-12">
-                <div className="space-y-6">
-                  {/* Step Indicator */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm font-semibold">1</div>
-                      <div className="w-12 h-1 bg-slate-200"></div>
-                      <div className="w-8 h-8 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-sm font-semibold">2</div>
-                      <div className="w-12 h-1 bg-slate-200"></div>
-                      <div className="w-8 h-8 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-sm font-semibold">3</div>
-                    </div>
-                    <span className="text-xs text-slate-500 font-medium">Step 1 of 3</span>
-                  </div>
-
-                  {/* Question */}
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-3 block">
-                      What type of project do you have?
-                    </label>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                      <div className="bg-white border-2 border-slate-900 rounded-lg p-4 cursor-pointer">
-                        <div className="text-2xl mb-2">🏗️</div>
-                        <div className="text-sm font-medium text-slate-900">Construction</div>
-                      </div>
-                      <div className="bg-white border border-slate-200 rounded-lg p-4 hover:border-slate-300 cursor-pointer">
-                        <div className="text-2xl mb-2">🏠</div>
-                        <div className="text-sm font-medium text-slate-600">Residential</div>
-                      </div>
-                      <div className="bg-white border border-slate-200 rounded-lg p-4 hover:border-slate-300 cursor-pointer">
-                        <div className="text-2xl mb-2">🏢</div>
-                        <div className="text-sm font-medium text-slate-600">Commercial</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Size Selection Preview */}
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-3 block">
-                      Select container size
-                    </label>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white border border-slate-200 rounded-lg p-4 hover:border-slate-300 cursor-pointer">
-                        <div className="text-lg font-bold text-slate-900 mb-1">10 Yard</div>
-                        <div className="text-xs text-slate-500">Small projects</div>
-                      </div>
-                      <div className="bg-white border border-slate-200 rounded-lg p-4 hover:border-slate-300 cursor-pointer">
-                        <div className="text-lg font-bold text-slate-900 mb-1">20 Yard</div>
-                        <div className="text-xs text-slate-500">Medium projects</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <div className="bg-slate-900 text-white text-center py-3 px-6 rounded-lg font-medium cursor-pointer">
-                      Continue →
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Button
+            to="/contact"
+            variant="ghost"
+            size="lg"
+            className="px-10 py-5 rounded-xl font-bold text-lg text-slate-700 hover:bg-slate-100 transition-all duration-300 border-2 border-slate-200 hover:border-slate-300"
+          >
+            Contact Us
+          </Button>
         </motion.div>
       </div>
     </section>
